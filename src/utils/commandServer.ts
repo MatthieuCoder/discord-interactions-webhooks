@@ -2,7 +2,6 @@
 import express, {NextFunction, Request, Response} from 'express';
 import {
     ApplicationCommandInteraction,
-    ApplicationCommandOptionType,
     InteractionType,
     InteractionWebhook
 } from "../types";
@@ -23,6 +22,12 @@ export class CommandServer {
             limit: 10 ** 8,
             type: '*/*',
         }));
+        server.use('/', (req, res) => {
+            res.status(200);
+            res.json({
+                ok: true,
+            });
+        });
         server.use('/webhook', this.serve.bind(this));
 
         const startPromise = new Promise<void>((acc) => {
