@@ -1,0 +1,24 @@
+{
+  "name": "interactions-webhook",
+  "version": "1.0.0",
+  "description": "Exemple of an interactions webhook",
+  "main": "index.js",
+  "repository": "https://gitlab.com/developers-house/dev/interactions-webhook.git",
+  "author": "Matthieu <matthieu974fr.pignolet@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "tsc -p .",
+    "start": "node build"
+  },
+  "dependencies": {
+    "@types/express": "^4.17.9",
+    "@types/morgan": "^1.9.2",
+    "express": "^4.17.1",
+    "fetch": "^1.1.0",
+    "morgan": "^1.10.0",
+    "node-fetch": "^2.6.1",
+    "tweetnacl": "^1.0.3",
+    "xo": "^0.36.1"
+  }
+}
