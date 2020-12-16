@@ -22,13 +22,12 @@ export class CommandServer {
             limit: 10 ** 8,
             type: '*/*',
         }));
+
+        server.use('/webhook', this.serve.bind(this));
         server.use('/', (req, res) => {
             res.status(200);
-            res.json({
-                ok: true,
-            });
+            res.end();
         });
-        server.use('/webhook', this.serve.bind(this));
 
         const startPromise = new Promise<void>((acc) => {
             this.initialized = false;
