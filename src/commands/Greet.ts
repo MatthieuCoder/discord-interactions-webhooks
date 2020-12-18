@@ -9,20 +9,27 @@ const command: Command = {
         options: [
             {
                 name: 'user',
-                type: ApplicationCommandOptionType.STRING,
+                type: ApplicationCommandOptionType.USER,
                 description: 'The person you want to say hi to.'
+            },
+            {
+                name: 'message',
+                type: ApplicationCommandOptionType.STRING,
+                description: 'The message'
             },
         ],
     },
     async execute(data: ApplicationCommandInteraction): Promise<any> {
         const [{
             value
+        }, {
+            value: message
         }] = data.data.options;
 
         return {
             type: 4,
             data: {
-                content: `Hey ${value.replace('@', '')}! Hello`,
+                content: `Hey <@${value}>! ${message.replace('@', '')}`,
             }
         };
     }
