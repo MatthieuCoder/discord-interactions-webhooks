@@ -9,7 +9,7 @@ const command: Command = {
         options: [
             {
                 name: 'user',
-                type: ApplicationCommandOptionType.USER,
+                type: ApplicationCommandOptionType.STRING,
                 description: 'The person you want to say hi to.'
             },
         ],
@@ -22,7 +22,7 @@ const command: Command = {
         return {
             type: 4,
             data: {
-                content: `Hey <@${value}>! Hello`,
+                content: `Hey ${value.replace('@', '')}! Hello`,
             }
         };
     }
