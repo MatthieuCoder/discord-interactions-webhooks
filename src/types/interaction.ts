@@ -31,7 +31,7 @@ export interface ApplicationPingInteraction extends BaseInteraction {
 
 export interface ApplicationCommandInteractionDataOption {
     name: string;
-    value?: ApplicationCommandOptionType;
+    value?: string;
     options?: ApplicationCommandInteractionDataOption;
 }
 
