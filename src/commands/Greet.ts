@@ -10,12 +10,14 @@ const command: Command = {
             {
                 name: 'user',
                 type: ApplicationCommandOptionType.USER,
-                description: 'The person you want to say hi to.'
+                description: 'The person you want to say hi to.',
+                required: true,
             },
             {
                 name: 'message',
                 type: ApplicationCommandOptionType.STRING,
-                description: 'The message'
+                description: 'The message',
+                required: true,
             },
         ],
     },
